@@ -22,9 +22,9 @@ function draw(){
         min--
     }
     stroke(0);
-    sec_angle = map(timer, 0, 60,0, 360);    
+    min_angle = map(min ,0,25,0, 360);    
     noFill();
-    arc(width*0.5,height*0.5,300,300,0,sec_angle);  
+    arc(width*0.5,height*0.5,300,300,0,min_angle);  
 
 
     
