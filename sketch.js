@@ -1,6 +1,7 @@
 let timer = 60;
 let min = 25
 
+
 function setup(){
     createCanvas(windowWidth,windowHeight);
     angleMode(DEGREES);
@@ -8,23 +9,30 @@ function setup(){
 
 
 function draw(){
-    background(255);
-    textAlign(CENTER,CENTER);
+    background(0);
+    translate(windowWidth/2,windowHeight/2)
+    textAlign(CENTER, CENTER);
     textSize(50);
-    text(min +':' + timer, width/2, height/2);
-    if (frameCount % 60 == 0 && timer > 0) { // if the frameCount is divisible by 60, then a second has passed. it will stop at 0
+    //let sec = second()
+    stroke(255);
+    text(min +':' + timer,0, 0);
+    if (frameCount % 60 == 0 && timer > 0) { 
         timer --;
       }
 
     if (timer == 0) {
-        // text("GAME OVER", width/2, height*0.7);
+        
         timer = 60;
         min--
     }
-    stroke(0);
+    //sec_angle = map(sec,0,60,0,360);
     min_angle = map(min ,0,25,0, 360);    
     noFill();
-    arc(width*0.5,height*0.5,300,300,0,min_angle);  
+    push();
+    rotate(270);
+   // arc(0,0,320,320,0,sec_angle);  TODO: remember to remove 
+    arc(0,0,300,300,0,min_angle);  
+    pop();
 
 
     
